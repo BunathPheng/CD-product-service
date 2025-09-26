@@ -1,0 +1,11 @@
+# values.yaml
+namespace: my-app-namespace
+image:
+  imageRepository: phengbunath/spring-product
+  tag: 41
+
+service:
+  type: LoadBalancer   # <-- LoadBalancer type
+  port: 8080
+  targetPort: 8080
+  # nodePort is ignored for LoadBalancer

@@ -2,7 +2,7 @@
 namespace: my-app-namespace
 image:
   imageRepository: phengbunath/spring-product
-  tag: 4
+  tag: 6
 
 service:
   type: LoadBalancer   # <-- LoadBalancer type

@@ -23,14 +23,15 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: {{ .Values.service.targetPort }}
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://my-postgres-postgresql.my-namespace.svc.cluster.local:5432/mydb
-            - name: SPRING_DATASOURCE_USERNAME
-              value: myuser
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: my-postgres-postgresql
-                  key: postgres-password
+      env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://my-postgres-postgresql.my-app-namespace.svc.cluster.local:5432/mydb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: myuser
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-postgres-postgresql
+              key: postgres-password
+
 
